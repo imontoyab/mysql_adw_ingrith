@@ -1,4 +1,4 @@
-SELECT det.SalesOrderID id_dtll_venta, 
+SELECT distinct det.SalesOrderID id_dtll_venta, 
 comp.CustomerID,
 concat (per.FirstName, ' ',per.MiddleName, ' ', per.LastName)  as nombre_cliente,
 terr.TerritoryID,

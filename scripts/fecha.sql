@@ -1,5 +1,4 @@
 SELECT det.SalesOrderID id_dtll_venta, 
-sh.OrderDate,
 year(sh.OrderDate) as anno_orden,
 month(sh.OrderDate) as mes_orden,
 dayofweek(sh.OrderDate) as dia_orden,

@@ -10,6 +10,7 @@ FROM  Sales_SalesOrderDetail as det
 join  Production_Product as pp on  det.ProductID = pp.ProductID
 join  Production_ProductSubcategory as sbc on sbc.ProductSubcategoryID = pp.productsubcategoryid
 join  Production_ProductCategory as pc on pc.ProductCategoryID  = sbc.ProductCategoryID 
-limit 50;        
+where det.SalesOrderID = 51081
+limit 100;        
 
 
