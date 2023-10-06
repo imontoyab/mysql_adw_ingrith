@@ -1,5 +1,5 @@
 /*Create database DWHADVENTURE;*/
-/*
+
 CREATE TABLE IF NOT EXISTS dim_producto(
     producto_key  INT NOT NULL AUTO_INCREMENT,
     id_producto INT NOT NULL,
@@ -24,6 +24,18 @@ CREATE TABLE IF NOT EXISTS dim_fecha(
     PRIMARY KEY (fecha_key),
     UNIQUE KEY (orderdate)
 );
+
+
+
+CREATE TABLE IF NOT EXISTS dim_cliente(
+    cliente_key  INT NOT NULL AUTO_INCREMENT,
+    customer_id  INT NOT NULL,
+    nombre_cliente VARCHAR(300) NOT NULL,
+    territory_id INT NOT NULL,
+    PRIMARY KEY (cliente_key),
+    UNIQUE KEY (customer_id)
+);
+
 
 
 
@@ -80,15 +92,6 @@ CREATE TABLE IF NOT EXISTS orden_detalle(
     FOREIGN KEY (territory_key) REFERENCES dim_territorio(territory_key)
 );
 
-*/
 
 
 
-CREATE TABLE IF NOT EXISTS dim_cliente(
-    cliente_key  INT NOT NULL AUTO_INCREMENT,
-    customer_id  INT NOT NULL,
-    nombre_cliente VARCHAR(300) NOT NULL,
-    territory_id INT NOT NULL,
-    PRIMARY KEY (cliente_key),
-    UNIQUE KEY (customer_id)
-);
