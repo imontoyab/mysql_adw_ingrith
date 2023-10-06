@@ -1,4 +1,4 @@
-SELECT distinct det.SalesOrderID id_dtll_venta, 
+/*SELECT distinct det.SalesOrderID id_dtll_venta, 
 comp.CustomerID,
 concat (per.FirstName, ' ',per.MiddleName, ' ', per.LastName)  as nombre_cliente,
 terr.TerritoryID,
@@ -10,4 +10,28 @@ join Sales_SalesOrderHeader as oh on oh.SalesOrderID = det.SalesOrderID
 join  Sales_Customer as comp on comp.CustomerID = oh.CustomerID
 join Person_Person as per on  per.BusinessEntityID = comp.CustomerID
 join  Sales_SalesTerritory as terr on oh.TerritoryID = comp.TerritoryID
-limit 5; 
+limit 5; */
+
+
+
+WITH CLIENTE AS (
+SELECT comp.CustomerID,
+per.FirstName,
+per.MiddleName,
+per.LastName, 
+terr.TerritoryID,
+terr.Name ,
+terr.CountryRegionCode,
+terr.Group
+FROM  Sales_Customer as comp
+join Person_Person as per on  per.BusinessEntityID = comp.CustomerID
+join  Sales_SalesTerritory as terr on terr. TerritoryID = comp.TerritoryID 
+), cliente_adw as(
+
+select c.CustomerID,
+concat (c.FirstName, ' ',c.MiddleName, ' ', c.LastName)  as nombre_cliente,
+c.TerritoryID
+from  CLIENTE as c
+)  
+SELECT * FROM cliente_adw
+limit 5;
