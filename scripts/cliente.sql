@@ -54,12 +54,3 @@ from  CLIENTE as c
 )  
 SELECT * FROM cliente_adw ; 
 
-/*
-SELECT comp.CustomerID,
-per.FirstName,
-per.MiddleName,
-per.LastName, 
-comp.TerritoryID
-FROM  Sales_Customer as comp
-join Person_Person as per on per.BusinessEntityID = comp.CustomerID
-where comp.CustomerID = 18546; */
