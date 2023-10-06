@@ -16,7 +16,7 @@ join  Person_Person as per on  per.BusinessEntityID = emp.BusinessEntityID
 join  Sales_SalesTerritory as terr on oh.TerritoryID = terr.TerritoryID  
 limit 5; */
 
-INSERT INTO DWHADVENTURE.dim_vendedor (id_empleado,identificacion ,  nombre_empleado, fecha_nac , genero  , 
+INSERT INTO DWHADVENTURE.dim_vendedor ( id_empleado, identificacion ,  nombre_empleado, fecha_nac , genero  , 
 fecha_contratacion, territory_id )
 WITH vendedor AS(
 select 
@@ -29,7 +29,7 @@ emp.Gender   genero,
 emp.HireDate fecha_contratacion, 
 IFNULL(sp.TerritoryID, 0) TerritoryID
 FROM HumanResources_Employee as emp 
-join  Person_Person as per on per.BusinessEntityID = emp.BusinessEntityID
+JOIN  Person_Person as per on per.BusinessEntityID = emp.BusinessEntityID
 JOIN  Sales_SalesPerson sp on sp.BusinessEntityID = per.BusinessEntityID 
 ), vendedor_adw AS(
 SELECT v.id_empleado, 
