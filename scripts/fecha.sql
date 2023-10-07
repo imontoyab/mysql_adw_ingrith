@@ -40,4 +40,4 @@ dayofweek(F.FECHA) as dia_orden,
 hour(F.FECHA)as hora_orden,
 minute(F.FECHA) as minutos_orden
 FROM fechas as F)
-SELECT * FROM FECHA_VENTA; 
+SELECT * FROM FECHA_VENTA;

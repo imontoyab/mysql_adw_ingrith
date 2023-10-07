@@ -1,6 +1,6 @@
-/*Create database DWHADVENTURE;*/
-/*
-CREATE TABLE IF NOT EXISTS dim_producto(
+Create database IF NOT EXISTS DWHADVENTURE;
+
+CREATE TABLE IF NOT EXISTS DWHADVENTURE.dim_producto(
     producto_key  INT NOT NULL AUTO_INCREMENT,
     id_producto INT NOT NULL,
     nombre_producto VARCHAR(100) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS dim_producto(
 
 CREATE TABLE IF NOT EXISTS dim_fecha(
     fecha_key  INT NOT NULL AUTO_INCREMENT,
-    orderdate DATE NOT NULL,
+    orderdate timestamp NOT NULL,
     anno_orden INT NOT NULL,
     mes_orden INT NOT NULL,
     dia_orden INT NOT NULL,
@@ -87,11 +87,6 @@ CREATE TABLE IF NOT EXISTS orden_detalle(
     FOREIGN KEY (vendedor_key) REFERENCES dim_vendedor(vendedor_key),
     FOREIGN KEY (territory_key) REFERENCES dim_territorio(territory_key)
 );
-*/
-
-
-
-
 
 
 
