@@ -61,14 +61,13 @@ CREATE TABLE IF NOT EXISTS DWHADVENTURE.dim_territorio(
     PRIMARY KEY (territory_key),
     UNIQUE KEY (id_territory)
 );
-
-
+*/
 
 CREATE TABLE IF NOT EXISTS DWHADVENTURE.orden_detalle(
     orden_dtll_key INT NOT NULL AUTO_INCREMENT,
     id_dtll_venta  INT NOT NULL,
     cantidad INT NOT NULL,
-    precio_unit INT NOT NULL,
+    precio_unit decimal(19,4) NOT NULL,
     descuento_unit INT NOT NULL,
     dias_entrega INT NOT NULL,
     dias_envio INT NOT NULL,
@@ -87,4 +86,3 @@ CREATE TABLE IF NOT EXISTS DWHADVENTURE.orden_detalle(
 
 
 create index index_dtlle_key on orden_detalle(id_dtll_venta);
-*/
