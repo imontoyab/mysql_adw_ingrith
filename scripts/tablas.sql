@@ -1,4 +1,4 @@
-/*Create database IF NOT EXISTS DWHADVENTURE;
+Create database IF NOT EXISTS DWHADVENTURE;
 
 CREATE TABLE IF NOT EXISTS DWHADVENTURE.dim_producto(
     producto_key  INT NOT NULL AUTO_INCREMENT,
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS DWHADVENTURE.dim_territorio(
     PRIMARY KEY (territory_key),
     UNIQUE KEY (id_territory)
 );
-*/
+
 
 CREATE TABLE IF NOT EXISTS DWHADVENTURE.orden_detalle(
     orden_dtll_key INT NOT NULL AUTO_INCREMENT,
