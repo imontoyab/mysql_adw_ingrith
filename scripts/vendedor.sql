@@ -16,6 +16,8 @@ join  Person_Person as per on  per.BusinessEntityID = emp.BusinessEntityID
 join  Sales_SalesTerritory as terr on oh.TerritoryID = terr.TerritoryID  
 limit 5; */
 
+
+
 INSERT INTO DWHADVENTURE.dim_vendedor ( id_empleado, identificacion ,  nombre_empleado, fecha_nac , genero  , 
 fecha_contratacion, territory_id )
 WITH vendedor AS(
@@ -42,3 +44,8 @@ v.TerritoryID
 FROM vendedor as v
 ) 
 SELECT * FROM vendedor_adw; 
+
+insert into DWHADVENTURE.dim_vendedor (  id_empleado, identificacion ,  nombre_empleado, fecha_nac , genero  , 
+fecha_contratacion, territory_id)
+values (00, 00, 'NOIDENTIFICADO', '1900/01/01', 'X', '1900/01/01', 00 ); 
+COMMIT; 

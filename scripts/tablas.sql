@@ -85,4 +85,4 @@ CREATE TABLE IF NOT EXISTS DWHADVENTURE.orden_detalle(
 );
 
 
-create index index_dtlle_key on orden_detalle(id_dtll_venta);
+create index index_dtlle_key on DWHADVENTURE.orden_detalle(id_dtll_venta);
