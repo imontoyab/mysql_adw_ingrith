@@ -1,3 +1,3 @@
 select * 
 from Sales_SalesOrderDetail od 
-where od.ProductID 
+where od.ProductID = 876; 
