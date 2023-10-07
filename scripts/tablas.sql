@@ -1,4 +1,4 @@
-Create database IF NOT EXISTS DWHADVENTURE;
+/*Create database IF NOT EXISTS DWHADVENTURE;
 
 CREATE TABLE IF NOT EXISTS DWHADVENTURE.dim_producto(
     producto_key  INT NOT NULL AUTO_INCREMENT,
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS DWHADVENTURE.dim_producto(
     UNIQUE KEY (id_producto)
 );
 
-CREATE TABLE IF NOT EXISTS dim_fecha(
+CREATE TABLE IF NOT EXISTS DWHADVENTURE.dim_fecha(
     fecha_key  INT NOT NULL AUTO_INCREMENT,
     orderdate timestamp NOT NULL,
     anno_orden INT NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS dim_fecha(
 
 
 
-CREATE TABLE IF NOT EXISTS dim_cliente(
+CREATE TABLE IF NOT EXISTS DWHADVENTURE.dim_cliente(
     cliente_key  INT NOT NULL AUTO_INCREMENT,
     customer_id  INT NOT NULL,
     nombre_cliente VARCHAR(300) NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS dim_cliente(
 
 
 
-CREATE TABLE IF NOT EXISTS dim_vendedor(
+CREATE TABLE IF NOT EXISTS DWHADVENTURE.dim_vendedor(
     vendedor_key  INT NOT NULL AUTO_INCREMENT,
     id_empleado  INT NOT NULL,
     identificacion BIGINT NOT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS dim_vendedor(
 );
 
 
-CREATE TABLE IF NOT EXISTS dim_territorio(
+CREATE TABLE IF NOT EXISTS DWHADVENTURE.dim_territorio(
     territory_key  INT NOT NULL AUTO_INCREMENT,
     id_territory  INT NOT NULL,
     name_territory VARCHAR(100) NOT NULL,
@@ -64,9 +64,7 @@ CREATE TABLE IF NOT EXISTS dim_territorio(
 
 
 
-
-
-CREATE TABLE IF NOT EXISTS orden_detalle(
+CREATE TABLE IF NOT EXISTS DWHADVENTURE.orden_detalle(
     orden_dtll_key INT NOT NULL AUTO_INCREMENT,
     id_dtll_venta  INT NOT NULL,
     cantidad INT NOT NULL,
@@ -80,7 +78,6 @@ CREATE TABLE IF NOT EXISTS orden_detalle(
     vendedor_key    INT NOT NULL,
     territory_key  INT NOT NULL,
     PRIMARY KEY (orden_dtll_key),
-    UNIQUE KEY (id_dtll_venta),
     FOREIGN KEY (producto_key) REFERENCES dim_producto(producto_key),
     FOREIGN KEY (fecha_key) REFERENCES dim_fecha(fecha_key),
     FOREIGN KEY (cliente_key) REFERENCES dim_cliente(cliente_key),
@@ -89,4 +86,5 @@ CREATE TABLE IF NOT EXISTS orden_detalle(
 );
 
 
-
+create index index_dtlle_key on orden_detalle(id_dtll_venta);
+*/

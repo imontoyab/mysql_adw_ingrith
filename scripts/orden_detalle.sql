@@ -38,7 +38,8 @@ select * from  ventas
 limit 10;*/
 
 
-
+INSERT INTO DWHADVENTURE.orden_detalle (id_dtll_venta, cantidad, precio_unit,  descuento_unit,  dias_entrega, dias_envio, producto_key,  fecha_key, cliente_key, vendedor_key, territory_key 
+)
 with fact as(
 SELECT det.SalesOrderID id_dtll_venta,
 det.OrderQty cantidad, 
@@ -73,7 +74,5 @@ f.vendedor_key,
 f.territory_key
 from fact as f
 )
-select * from fact_consol
-limit 5; 
-
+select * from fact_consol dd ; 
 
