@@ -67,4 +67,4 @@ detener-contenedor.bat
 sh ./detener-contenedor.sh
 ```
 
-Wala estuvo aqui
+nadie estuvo aqui
