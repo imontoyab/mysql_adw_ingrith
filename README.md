@@ -67,4 +67,3 @@ detener-contenedor.bat
 sh ./detener-contenedor.sh
 ```
 
-nadie estuvo aqui
