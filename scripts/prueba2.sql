@@ -1,2 +1,3 @@
-select * from Sales_SalesOrderDetail od 
+select * 
+from Sales_SalesOrderDetail od 
 where od.ProductID 
