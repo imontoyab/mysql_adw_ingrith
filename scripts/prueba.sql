@@ -1,6 +1,6 @@
 
 
-/*------------------ producto com mayor valor DE VENTA--------------------------*/
+/*------------------ producto con mayor valor DE VENTA--------------------------*/
 
 WITH VENTA AS(
 select dp.id_producto,  dp.nombre_producto, sum(od.cantidad * od.precio_unit) AS SUM 
