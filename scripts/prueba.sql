@@ -55,29 +55,25 @@ order by MAX_CANT desc
 SELECT * FROM PP 
 ;
 
-/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------top 5 vendedor-edad-valor_venta -------------------------------------------------*/
 
-
-WITH VENTA AS(
-select dt.name_territory , dp.nombre_producto, sum(od.cantidad) AS CANTIDAD 
+WITH vendedor AS(
+select dv.nombre_empleado , timestampdiff ( year,  dv.fecha_nac, df.orderdate ) edad , (od.cantidad * od.precio_unit) valor
 from orden_detalle od
 join dim_producto as dp on dp.producto_key = od.producto_key
 JOIN dim_territorio AS dt ON dt.territory_key = od.territory_key
-JOIN dim_vendedor AS DV ON DV.vendedor_key = od.vendedor_key
-group by dt.name_territory, dp.nombre_producto
-), 
-prod_terr as(
-SELECT v.name_territory , MAX(v.CANTIDAD) AS MAX_CANT
-FROM VENTA v 
-GROUP BY  v.name_territory 
-), PP AS(
-SELECT pt.name_territory, v.nombre_producto,  pt.MAX_CANT
-FROM prod_terr as pt 
-join VENTA as v on v.CANTIDAD = pt.MAX_CANT and v.name_territory = pt.name_territory
-order by MAX_CANT desc
-)
-SELECT * FROM PP 
-;
+JOIN dim_vendedor AS dv ON dv.vendedor_key = od.vendedor_key
+JOIN dim_fecha as df on df.fecha_key = od.fecha_key
+), vend_fecha as(
 
+SELECT vd.nombre_empleado, vd.edad, sum(vd.valor) sum_ventas
+FROM vendedor vd 
+where vd.nombre_empleado not in ('NOIDENTIFICADO')
+group by vd.nombre_empleado, vd.edad
+order by sum_ventas desc
+)
+SELECT * FROM vend_fecha
+limit 5
+;
 
 
