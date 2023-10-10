@@ -73,21 +73,21 @@ sh ./detener-contenedor.sh
 
 ## Creacion de la base y de las tablas 
 
-- tablas.sql.
+- 1 tablas.sql.
 
 ## Insert de cada dimension
 
--cliente.sql
--fecha.sql
--productos.sql
--territorio.sql
--vendedor.sql
+-2 cliente.sql
+-3 fecha.sql
+-4 productos.sql
+-5 territorio.sql
+-6 vendedor.sql
 
 ## Insert tabla de hechos
  
--orden_detalle.sql
+-7 orden_detalle.sql
 
 
 ## Consultas a la bodega de datos 
 
--prueba.sql
+-8 consultas.sql
