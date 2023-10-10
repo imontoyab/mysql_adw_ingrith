@@ -69,6 +69,8 @@ sh ./detener-contenedor.sh
 
 ## Los scripts se ejecutan en el siguiente orden
 
+## En la carpeta scripts se encuentra la información: 
+
 
 
 ## Creacion de la base y de las tablas 
