@@ -67,3 +67,27 @@ detener-contenedor.bat
 sh ./detener-contenedor.sh
 ```
 
+## Los scripts se ejecutan en el siguiente orden
+
+
+
+## Creacion de la base y de las tablas 
+
+- tablas.sql.
+
+## Insert de cada dimension
+
+-cliente.sql
+-fecha.sql
+-productos.sql
+-territorio.sql
+-vendedor.sql
+
+## Insert tabla de hechos
+ 
+-orden_detalle.sql
+
+
+## Consultas a la bodega de datos 
+
+-prueba.sql
